@@ -349,6 +349,8 @@ template {
   --accent-color-one: #703BF7;
   --accent-color-two: #fcfcfc;
   --accent-color-three: #8254f8;
+  --accent-color-four: #1A1A1A;
+  --accent-color-five: #262626;
   --main-color: #FFFFFF;
   /* FONTS */
   --main-font: "Urbanist", sans-serif;
@@ -361,4 +363,10 @@ template {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-size: var(--main-size);
+  color: var(--main-color);
 }
