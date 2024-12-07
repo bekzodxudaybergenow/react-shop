@@ -23,6 +23,9 @@ a {
 h1, h2, h3, h4 {
     margin: 0;
 }
+ul {
+    list-style: none;
+}
 .btn {
     font-size: 16px;
     font-weight: 500;
@@ -40,4 +43,13 @@ h1, h2, h3, h4 {
     &:active {
         opacity: 1;
     }
+}
+.desc {
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--desc-color);
+}
+.subtitle {
+    font-size: 16px;
+    font-weight: 400;
 }
