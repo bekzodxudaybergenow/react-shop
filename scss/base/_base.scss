@@ -20,3 +20,24 @@ body {
 a {
     text-decoration: none;
 }
+h1, h2, h3, h4 {
+    margin: 0;
+}
+.btn {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 32px;
+    border-radius: 4px;
+    color: var(--main-color);
+    background-color: var(--accent-color-three);
+    transition: background-color .3s ease;
+    transition: opacity .2s ease;
+    
+
+    &:hover {
+        opacity: .9;
+    }
+    &:active {
+        opacity: 1;
+    }
+}
