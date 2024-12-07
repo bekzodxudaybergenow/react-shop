@@ -426,7 +426,7 @@ ul {
   background-image: url("/images/header/bg-header.svg");
   background-size: 1000px;
   background-position: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--accent-color-seven);
 }
 
 .head-container {
@@ -692,4 +692,92 @@ ul {
 .work-item--desc {
   font-size: 16px;
   line-height: 24px;
+}
+
+.company {
+  padding: 80px 0;
+  position: relative;
+}
+.company::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 80px;
+  background-color: var(--main-color);
+  top: -40px;
+  left: 50%;
+}
+
+.company-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company-content {
+  max-width: 768px;
+  text-align: center;
+  padding-bottom: 64px;
+}
+
+.company-content--title {
+  margin-bottom: 16px;
+}
+
+.company-partner {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  max-width: 900px;
+  width: 100%;
+}
+.company-partner img:last-child {
+  margin-top: 15px;
+}
+
+.company-ceo {
+  max-width: 768px;
+  margin-top: 80px;
+  padding: 80px 48px 32px;
+  border-radius: 6px;
+  position: relative;
+  text-align: center;
+  border: 1px solid var(--accent-color-one);
+  background-color: var(--accent-color-four);
+}
+
+.company-quotation-mark {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: -43px;
+  left: 54%;
+}
+
+.company-ceo--image {
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  border-radius: 50px;
+  transform: translateX(-50%);
+}
+
+.company-ceo--desc {
+  margin-bottom: 16px;
+}
+
+.company-ceo--name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.company-ceo--position {
+  font-size: 16px;
+}
+
+.company-ceo--link {
+  color: rgb(14, 165, 233);
 }
