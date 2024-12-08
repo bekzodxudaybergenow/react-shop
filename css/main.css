@@ -463,7 +463,7 @@ ul {
   width: 100%;
   height: 44px;
   padding: 0 32px;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--accent-color-seven);
   border-radius: 50px;
   background-color: var(--bg-color);
 }
@@ -931,4 +931,111 @@ ul {
 .footer-bottom-desc a:hover {
   text-decoration: underline;
   color: var(--accent-color-one);
+}
+
+.products-list-section {
+  margin: 100px 0;
+}
+
+.products-container {
+  max-width: 1300px;
+}
+
+.products-row {
+  display: flex;
+  justify-content: center;
+  column-gap: 25px;
+}
+
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 1010px;
+  width: 100%;
+}
+
+.products-list--item {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  padding: 28px;
+  border: 1px solid var(--accent-color-five);
+  border-radius: 10px;
+}
+
+.products-item--image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 10px;
+  margin-bottom: 28px;
+}
+
+.products-item--title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.products-item--desc {
+  font-size: 12px;
+  color: var(--desc-color);
+  margin-bottom: 16px;
+}
+
+.prducts-item--inner {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.product-item--price {
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 60px;
+}
+
+.products-item--btn {
+  font-size: 18px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--main-color);
+  background-color: var(--accent-color-one);
+  transition: background-color 0.3s ease;
+}
+.products-item--btn:hover {
+  background-color: var(--accent-color-three);
+}
+.products-item--btn:active {
+  background-color: var(--accent-color-one);
+}
+
+.products-categories {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  max-width: 200px;
+  width: 100%;
+  height: 350px;
+  border: 1px solid var(--accent-color-five);
+  padding: 40px 10px;
+}
+
+.product-categories--btn {
+  max-width: 170px;
+  height: 35px;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 15px;
+  color: var(--main-color);
+  background-color: var(--accent-color-five);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
+}
+.product-categories--btn:hover {
+  background-color: var(--accent-color-three);
 }

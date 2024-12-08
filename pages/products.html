@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/images/total/head-icon.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Shop</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="head">
+            <div class="container head-container">
+                <div class="head-row">
+                    <a class="head-logo" href="/"><img src="/images/total/logo.png" alt="Logo"></a>
+                    <nav class="head-nav">
+                        <a class="head-nav--link" href="/index.html">Home</a>
+                        <a class="head-nav--link" href="#">Products</a>
+                        <a class="head-nav--link" href="/">About</a>
+                    </nav>
+                    <div class="head-action">
+                        <a class="head-action--btn login" href="/">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2"></path><path d="M3 12h13l-3 -3"></path><path d="M13 15l3 -3"></path></svg>
+                            Login
+                        </a>
+                        <a class="head-action--btn sign-up" href="/">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="mr-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path d="M16 19h6"></path><path d="M19 16v6"></path><path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path></svg>
+                            Sign Up
+                        </a>
+                        <select class="head-action--btn mode">
+                            <option value="0">📟</option>
+                            <option value="1">dark</option>
+                            <option value="2">light</option>
+                            <option value="3">system</option>
+                        </select>
+                        <a class="head-action--btn github" href="/"><img src="/images/total/github.svg" alt="Github"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main-product">
+        <!-- <section class="search">
+            <div class="container">
+                <form class="search-form">
+                    <img src="/images/product/search.svg" alt="Search">
+                    <input type="text" placeholder="Search ...">
+                </form>
+            </div>
+        </section> -->
+        <section class="products-list-section">
+            <div class="container products-container">
+                <div class="products-row">
+                    <ul class="products-list">
+                    </ul>
+                    <div class="products-categories">
+                        <span>Categories :</span>
+                        <button class="product-categories--btn">All</button>
+                        <button class="product-categories--btn">Men's clothing</button>
+                        <button class="product-categories--btn">Jewelery</button>
+                        <button class="product-categories--btn">Electronics</button>
+                        <button class="product-categories--btn">Women's clothing</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-privacy">
+                    <a href="/">Terms</a>
+                    <a href="/">Privacy Policy</a>
+                </div>
+                <div class="footer-row--item footer-products">
+                    <h6 class="footer-item--title subtitle">Products</h6>
+                    <ul class="footer-list">
+                        <li class="footer-list--item">
+                            <a class="footer-item--link" href="/">Web Studio</a>
+                            <a class="footer-item--link" href="/">DynamicBox Flex</a>
+                            <a class="footer-item--link" href="/">Programming Forms</a>
+                            <a class="footer-item--link" href="/">Integrations</a>
+                            <a class="footer-item--link" href="/">Command-line</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-row--item footer-resources">
+                    <h6 class="footer-item--title subtitle">Resources</h6>
+                    <ul class="footer-list">
+                        <li class="footer-list--item">
+                            <a class="footer-item--link" href="/">Documentation</a>
+                            <a class="footer-item--link" href="/">Tutorials & Guides</a>
+                            <a class="footer-item--link" href="/">Blog</a>
+                            <a class="footer-item--link" href="/">Support Center</a>
+                            <a class="footer-item--link" href="/">Partners</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-row--item footer-company">
+                    <h6 class="footer-item--title subtitle">Company</h6>
+                    <ul class="footer-list">
+                        <li class="footer-list--item">
+                            <a class="footer-item--link" href="/">Home</a>
+                            <a class="footer-item--link" href="/">About us</a>
+                            <a class="footer-item--link" href="/">Company values</a>
+                            <a class="footer-item--link" href="/">Pricing</a>
+                            <a class="footer-item--link" href="/">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-row--item footer-subscribe">
+                    <h6 class="footer-item--title subtitle">Subscribe</h6>
+                    <ul class="footer-list">
+                        <li class="footer-list--item">
+                            <a class="footer-item--link" href="/">
+                                Get the latest news and articles to your inbox every month
+                            </a>
+                            <form class="footer-form">
+                                <input class="footer-form--input" type="text" placeholder="Your email">
+                                <button class="footer-form--btn">
+                                    <img src="/images/footer/arr.svg" alt="Form btn icon">
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-bottom-desc">Made with <span>♥</span> by <span><a href="/">Siza</a></span></p>
+        </div>
+    </footer>
+    <script src="/script/product.js"></script>
+</body>
+</html>
