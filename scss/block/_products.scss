@@ -94,3 +94,98 @@
         background-color: var(--accent-color-three);
     }
 }
+.head-card {
+    cursor: pointer;
+    position: relative;
+}
+.head-card--count {
+    position: absolute;
+    top: -3px;
+    right: -2px;
+    font-size: 12px;
+    padding: 3px 5px 2px;
+    border-radius: 50px;
+    color: var(--main-color);
+    background-color: var(--accent-color-one);
+
+}
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    width: 400px;
+    height: 100vh;
+    top: 0;
+    right: 10px;
+    padding: 10px 0;
+    transform: translateX(500px);
+    transition: all 1s ease;
+}
+.sidebar.active {
+    transition: all 1s ease;
+    transform: translateX(0);
+}
+.sidebar-row {
+    width: 100%;
+    height: 100%;
+    padding: 30px 20px;
+    border-radius: 10px;
+    overflow-y:scroll;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+    background-color: var(--accent-color-four);
+}
+.sidebar-list--item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, .2);
+}
+.sidebar-item--image {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 5px;
+}
+.sidebar-count {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.sidebar-count--decriment,
+.sidebar-count--increment {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--accent-color-four);
+    background-color: var(--accent-color-one);
+    transition: background-color .3s ease;
+
+    &:hover{
+        background-color: var(--accent-color-three);
+    }
+    &:active{
+        background-color: var(--accent-color-one);
+    }
+}
+.sidebar-close--btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    color: var(--main-color);
+    background-color: transparent;
+    border-radius: 50px;
+    border: 2px solid var(--accent-color-seven);
+    cursor: pointer;
+    transition: background-color .3s ease;
+    margin-bottom: 40px;
+
+    &:hover {
+        background-color: var(--accent-color-one);
+    }
+    &:active{
+        background-color: var(--accent-color-three);
+    }
+}
