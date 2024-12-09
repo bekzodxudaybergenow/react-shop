@@ -6,9 +6,12 @@ let sidebar = document.querySelector('.sidebar');
 let sidebarList = document.querySelector('.sidebar-list');
 let headCardCount = document.querySelector('.head-card--count');
 let sidebarCountCoun = document.querySelector('.sidebar-count--coun');
+let sidebarSum = document.querySelector('.sidebar-sum');
+let loader = document.querySelector('.loader');
 
 let globalProducts;
 let myProducts = [];
+let sidebarTotalSum = 0;
 
 
 
@@ -33,12 +36,13 @@ let initApp = () => {
         filterCategories(res);
         globalProducts = res;
     })
-    .catch((err) => {console.log(err.message)});
+    .catch((err) => {console.log(err.message)})
+    .finally(() => {loader.style.display = 'none'})
 }
 initApp()
 
 /* Mahsulotlarni htmlga joylashtirish */
-let buildHtml = (tempProducts = products) => {
+let buildHtml = (tempProducts = globalProducts) => {
     productsList.innerHTML = '';
     tempProducts.forEach((product) => {
         productsList.innerHTML += `
@@ -73,27 +77,65 @@ let addProduct = (productId) => {
     let getProductObj = globalProducts.find((el) => el.id === productId);
     if(!(myProducts.some((item) => item.id === productId))) {
         myProducts.push({...getProductObj, count: 1});
-    
+        
+        sidebarTotalSum += getProductObj.price;
+        sidebarSum.textContent = sidebarTotalSum.toFixed(2);
         headCardCount.textContent++;
         buildSidebarHTML(myProducts);
     }
 }
 
+/*  Mahsulotlarni Sidebar joylashtirish */
 let buildSidebarHTML = (myProducts) => {
     sidebarList.innerHTML = '';
     myProducts.forEach((myProduct) => {
         sidebarList.innerHTML += `
          <li class="sidebar-list--item">
-            <img class="sidebar-item--image" src="${myProduct.image}" alt="">
-            <div class="sidebar-count">
-                <button class="sidebar-count--decriment">-</button>
-                <span class="sidebar-count--count">${myProduct.count}</span>
-                <button class="sidebar-count--increment">+</button>
+            <div class="sidebar-item--inner">
+                <img class="sidebar-item--image" src="${myProduct.image}" alt="">
+                <span class="sidebar-item--price">$${myProduct.price}</span>
             </div>
-        </li>
+            <div class="sidebar-count">
+                <button class="sidebar-count--remove" onclick="removetBtn(${myProduct.id})">Remove</button>
+                <button class="sidebar-count--decriment" onclick="decrimentBtn(${myProduct.id})">-</button>
+                <span class="sidebar-count--count">${myProduct.count}</span>
+                <button class="sidebar-count--increment" onclick="incrementBtn(${myProduct.id})">+</button>
+            </div>
+            </li>
         `
     })
 }
 
+let incrementBtn = (myProductId) => {
+    let findObj = myProducts.find((el) => el.id === myProductId);
+    if(findObj.count < findObj.rating.count) {
+        findObj.count++;
+        sidebarTotalSum += findObj.price;
+        sidebarSum.textContent = sidebarTotalSum.toFixed(2);
+    }
+    buildSidebarHTML(myProducts);
+}
 
+let decrimentBtn = (myProductId) => {
+    let findObj = myProducts.find((el) => el.id === myProductId);
+    if(findObj.count > 1) {
+        findObj.count--;
+        sidebarTotalSum -= findObj.price;
+        sidebarSum.textContent = sidebarTotalSum.toFixed(2);
+    }
+    else {
+        return findObj.count;
+    }
+    
+    buildSidebarHTML(myProducts);
+}
+
+let removetBtn = (myProductId) => {
+    let sidebarProductIdx = globalProducts.find((el) => el.id === myProductId);
+    myProducts.splice(sidebarProductIdx, 1);
+    headCardCount.textContent--;
+    
+    
+    buildSidebarHTML(myProducts);
+}
 

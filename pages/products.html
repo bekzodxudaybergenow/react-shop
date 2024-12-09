@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/images/total/head-icon.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>React Shop</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -34,7 +35,10 @@
                         <a class="head-action--btn github" href="/"><img src="/images/total/github.svg" alt="Github"></a>
                         <div class="sidebar">
                             <div class="sidebar-row">
-                                <button class="sidebar-close--btn">close</button>
+                                <div class="sidebar-info">
+                                    <button class="sidebar-close--btn">Close</button>
+                                    <div class="sidebar-item--sum">Total Sum $<span class="sidebar-sum">0</span></div>
+                                </div>
                                 <ul class="sidebar-list">
                                 </ul>
                             </div>
@@ -47,6 +51,7 @@
     <main class="main-product">
         <section class="products-list-section">
             <div class="container products-container">
+                <div class="loader"><i class="fa-solid fa-spinner fa-spin"></i></div>
                 <div class="products-row">
                     <ul class="products-list">
                     </ul>
