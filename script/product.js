@@ -79,7 +79,7 @@ let addProduct = (productId) => {
         myProducts.push({...getProductObj, count: 1});
         
         sidebarTotalSum += getProductObj.price;
-        sidebarSum.textContent = sidebarTotalSum.toFixed(2);
+        sidebarSum.textContent = sidebarTotalSum;
         headCardCount.textContent++;
         buildSidebarHTML(myProducts);
     }
@@ -131,11 +131,15 @@ let decrimentBtn = (myProductId) => {
 }
 
 let removetBtn = (myProductId) => {
-    let sidebarProductIdx = globalProducts.find((el) => el.id === myProductId);
+    let sidebarProductObj = myProducts.find((el) => el.id === myProductId);
+    let sidebarProductIdx = myProducts.findIndex((el) => el.id === myProductId);
+    
     myProducts.splice(sidebarProductIdx, 1);
     headCardCount.textContent--;
     
-    
+    sidebarTotalSum -= sidebarProductObj.price
+    sidebarSum.textContent = sidebarTotalSum.toFixed(2);
+
     buildSidebarHTML(myProducts);
 }
 
