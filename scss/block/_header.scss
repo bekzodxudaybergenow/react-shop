@@ -19,7 +19,7 @@
     outline-color: var(--accent-color-one);
     & img {
         display: block;
-        width: 240px;
+        width: 110px;
     }
     &:hover {
         opacity: .8;
@@ -29,7 +29,7 @@
     }
 }
 .head-nav {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-around;
     max-width: 468px;
@@ -52,7 +52,7 @@
     }
 }
 .head-action {
-    display: flex;
+    display: none;
     column-gap: 10px;
 }
 .head-action--btn {
@@ -88,6 +88,7 @@
 
 /* HERO */
 .hero {
+    display: none;
     background-image: url('/images/header/circle.svg');
     background-position: center;
     background-position: center 30px;
