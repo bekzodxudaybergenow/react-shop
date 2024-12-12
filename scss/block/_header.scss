@@ -51,6 +51,31 @@
         color: var(--accent-color-one);
     }
 }
+.head-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    bottom: 15px;
+    width: 70vw;
+    padding: 80px 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 3px rgba(39, 39, 39, 0.9);
+    background-color: var(--accent-color-four);
+
+    & .head-nav--link {
+        margin-bottom: 20px;
+    }
+}
+.sidebar-closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: var(--accent-color-one);
+}
 .head-action {
     display: none;
     column-gap: 10px;
