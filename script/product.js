@@ -188,6 +188,5 @@ let removetBtn = (myProductId) => {
     
         buildSidebarHTML(myProducts);
     }
-    console.log(sidebarProductObj.count);
 }
 
