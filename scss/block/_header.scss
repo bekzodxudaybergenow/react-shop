@@ -10,8 +10,8 @@
 }
 .head-row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    column-gap: 6px;
     padding: 16px 0;
 }
 .head-logo {
@@ -19,7 +19,7 @@
     outline-color: var(--accent-color-one);
     & img {
         display: block;
-        width: 110px;
+        width: 130px;
     }
     &:hover {
         opacity: .8;
@@ -68,6 +68,7 @@
     transition: all 1.2s ease;
 
     & .head-nav--link {
+        display: inline-block !important;
         margin-bottom: 20px;
     }
 }
@@ -75,12 +76,28 @@
     transform: translateX(0);
 }
 .sidebar-closeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: transparent;
+    font-size: 20px;
+    width: 34px;
+    height: 30px;
     border: none;
-    color: var(--accent-color-one);
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--main-color);
+    background-color: var(--accent-color-one);
+    transition: opacity .3s ease;
+
+    &:hover {
+        opacity: .8;
+    }
+    &:active {
+        opacity: 1;
+    }
 }
 .head-shade {
     position: fixed;
@@ -91,14 +108,29 @@
     transform: translateX(-120%);
     background-color: rgba(20, 20, 20, .9);
     z-index: 1;
-    transition: all 1s ease;
+    transition: all .7s ease;
 
 }
 .head-shade.show {
     transform: translateX(0);
 }
 .head-humburger--btn {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    color: var(--main-color);
+    background-color: var(--accent-color-one);
+    transition: opacity .3s ease;
+    margin-left: auto;
 
+    &:hover {
+        opacity: .8;
+    }
+    &:active {
+        opacity: 1;
+    }
 }
 .head-action {
     display: none;
@@ -132,8 +164,22 @@
     width: 50px;
 }
 .github {
-    width: 40px;
+    width: 30px;
 }
+.head-github--btn {
+    display: flex;
+    align-items: center;
+    transition: opacity .3s ease;;
+    outline-color: var(--accent-color-one);
+    
+    &:hover {
+        opacity: .8;
+    }
+    &:active {
+        opacity: 1;
+    }
+} 
+
 
 /* HERO */
 .hero {
@@ -188,4 +234,53 @@
 }
 .learn-btn {
     background-color: var(--accent-color-six);
+}
+
+@media screen and (min-width: 768px) {
+    .head-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+    }
+    .head-nav {
+        display: flex;
+        max-width: 400px;
+        height: 38px;
+    }
+    .head-sidebar,
+    .head-shade,
+    .head-humburger--btn {
+        display: none;
+    }
+    .head-nav--link {
+        font-size: 16px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .head-action {
+        display: flex;
+    }
+    .head-github--btn {
+        display: none;
+    }
+    .head-logo img {
+        width: 190px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .head-container {
+        max-width: 1360px;
+    }
+    .head-logo img {
+        width: 240px;
+    }
+    .head-nav {
+        display: flex;
+        max-width: 460px;
+        height: 48px;
+    }
+    .head-nav--link {
+        font-size: 20px;
+    }
 }

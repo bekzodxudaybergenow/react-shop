@@ -435,8 +435,8 @@ ul {
 
 .head-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  column-gap: 6px;
   padding: 16px 0;
 }
 
@@ -446,7 +446,7 @@ ul {
 }
 .head-logo img {
   display: block;
-  width: 110px;
+  width: 130px;
 }
 .head-logo:hover {
   opacity: 0.8;
@@ -496,6 +496,7 @@ ul {
   transition: all 1.2s ease;
 }
 .head-sidebar .head-nav--link {
+  display: inline-block !important;
   margin-bottom: 20px;
 }
 
@@ -504,12 +505,27 @@ ul {
 }
 
 .sidebar-closeBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: transparent;
+  font-size: 20px;
+  width: 34px;
+  height: 30px;
   border: none;
-  color: var(--accent-color-one);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--main-color);
+  background-color: var(--accent-color-one);
+  transition: opacity 0.3s ease;
+}
+.sidebar-closeBtn:hover {
+  opacity: 0.8;
+}
+.sidebar-closeBtn:active {
+  opacity: 1;
 }
 
 .head-shade {
@@ -521,11 +537,29 @@ ul {
   transform: translateX(-120%);
   background-color: rgba(20, 20, 20, 0.9);
   z-index: 1;
-  transition: all 1s ease;
+  transition: all 0.7s ease;
 }
 
 .head-shade.show {
   transform: translateX(0);
+}
+
+.head-humburger--btn {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  color: var(--main-color);
+  background-color: var(--accent-color-one);
+  transition: opacity 0.3s ease;
+  margin-left: auto;
+}
+.head-humburger--btn:hover {
+  opacity: 0.8;
+}
+.head-humburger--btn:active {
+  opacity: 1;
 }
 
 .head-action {
@@ -563,7 +597,20 @@ ul {
 }
 
 .github {
-  width: 40px;
+  width: 30px;
+}
+
+.head-github--btn {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  outline-color: var(--accent-color-one);
+}
+.head-github--btn:hover {
+  opacity: 0.8;
+}
+.head-github--btn:active {
+  opacity: 1;
 }
 
 /* HERO */
@@ -625,6 +672,54 @@ ul {
   background-color: var(--accent-color-six);
 }
 
+@media screen and (min-width: 768px) {
+  .head-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+  .head-nav {
+    display: flex;
+    max-width: 400px;
+    height: 38px;
+  }
+  .head-sidebar,
+  .head-shade,
+  .head-humburger--btn {
+    display: none;
+  }
+  .head-nav--link {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .head-action {
+    display: flex;
+  }
+  .head-github--btn {
+    display: none;
+  }
+  .head-logo img {
+    width: 190px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .head-container {
+    max-width: 1360px;
+  }
+  .head-logo img {
+    width: 240px;
+  }
+  .head-nav {
+    display: flex;
+    max-width: 460px;
+    height: 48px;
+  }
+  .head-nav--link {
+    font-size: 20px;
+  }
+}
 .solution {
   position: relative;
   height: 760px;
