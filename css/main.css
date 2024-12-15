@@ -550,6 +550,7 @@ ul {
   font-size: 20px;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
   color: var(--main-color);
   background-color: var(--accent-color-one);
   transition: opacity 0.3s ease;
@@ -615,7 +616,6 @@ ul {
 
 /* HERO */
 .hero {
-  display: none;
   background-image: url("/images/header/circle.svg");
   background-position: center;
   background-position: center 30px;
@@ -626,17 +626,16 @@ ul {
 .hero-row {
   display: flex;
   justify-content: center;
-  padding: 160px 0 120px;
+  padding: 120px 0 80px;
 }
 
 .hero-content {
-  max-width: 780px;
   text-align: center;
   padding-bottom: 64px;
 }
 
 .hero-content--title {
-  font-size: 60px;
+  font-size: 40px;
   margin-bottom: 16px;
   letter-spacing: -1px;
 }
@@ -656,8 +655,8 @@ ul {
 }
 
 .hero-content--desc {
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 24px;
   margin-bottom: 32px;
   color: var(--desc-color);
 }
@@ -665,7 +664,8 @@ ul {
 .hero-btns {
   display: flex;
   justify-content: center;
-  column-gap: 16px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .learn-btn {
@@ -692,6 +692,14 @@ ul {
   .head-nav--link {
     font-size: 16px;
   }
+  .hero-content {
+    max-width: 680px;
+    text-align: center;
+    padding-bottom: 64px;
+  }
+  .hero-btns {
+    flex-direction: row;
+  }
 }
 @media screen and (min-width: 1024px) {
   .head-action {
@@ -702,6 +710,15 @@ ul {
   }
   .head-logo img {
     width: 190px;
+  }
+  .hero-row {
+    padding: 150px 0 100px;
+  }
+  .hero-content--title {
+    font-size: 56px;
+  }
+  .hero-content--desc {
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -718,6 +735,20 @@ ul {
   }
   .head-nav--link {
     font-size: 20px;
+  }
+  /* HERO */
+  .hero-row {
+    padding: 185px 0 120px;
+  }
+  .hero-content {
+    max-width: 760px;
+  }
+  .hero-content--title {
+    font-size: 60px;
+  }
+  .hero-content--desc {
+    font-size: 20px;
+    line-height: 28px;
   }
 }
 .solution {
