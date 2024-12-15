@@ -455,6 +455,10 @@ ul {
   opacity: 1;
 }
 
+.humburger-btn {
+  margin-left: auto;
+}
+
 .head-nav {
   display: none;
   align-items: center;
@@ -554,13 +558,16 @@ ul {
   color: var(--main-color);
   background-color: var(--accent-color-one);
   transition: opacity 0.3s ease;
-  margin-left: auto;
 }
 .head-humburger--btn:hover {
   opacity: 0.8;
 }
 .head-humburger--btn:active {
   opacity: 1;
+}
+
+.head-menu--btn {
+  margin-left: auto !important;
 }
 
 .head-action {
@@ -1337,8 +1344,14 @@ ul {
     width: 100%;
   }
 }
+.head-product {
+  position: relative;
+  z-index: 2000;
+  background-color: var(--bg-color);
+}
+
 .products-list-section {
-  margin: 100px 0;
+  margin: 40px 0 100px;
 }
 
 .products-container {
@@ -1429,13 +1442,35 @@ ul {
 }
 
 .products-categories {
-  display: none;
+  display: flex;
   flex-direction: column;
   row-gap: 10px;
+  transform: translateY(-500px);
   width: 100%;
-  height: 350px;
+  height: 0;
   border: 1px solid var(--accent-color-five);
+  transition: all 1s ease;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 40px;
+}
+
+.products-categories.active {
+  height: 350px;
   padding: 40px 10px;
+  transform: translateY(0);
+}
+
+.head-category--btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  border: none;
+  padding: 10px;
+}
+.head-category--btn i {
+  rotate: 90deg;
 }
 
 .product-categories--btn {
@@ -1455,6 +1490,11 @@ ul {
 
 .head-action-card {
   display: flex;
+  margin-left: auto;
+}
+
+.head-humburger--btn {
+  margin: 0;
 }
 
 .head-card {
@@ -1477,6 +1517,22 @@ ul {
   transform: translateX(0);
 }
 
+.head-sidebar--shade {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(20, 20, 20, 0.9);
+  z-index: 100;
+  transform: translateX(100%);
+  transition: all 0.7s ease;
+}
+
+.head-sidebar--shade.active {
+  transform: translateX(0);
+}
+
 .head-shade.active {
   transform: translateX(0);
 }
@@ -1490,8 +1546,9 @@ ul {
   top: 0;
   right: 10px;
   padding: 10px 0;
-  transform: translateX(100%);
-  transition: all 1.3s ease-out;
+  transform: translateX(110%);
+  transition: all 1s ease-out;
+  z-index: 1000;
 }
 
 .sidebar.active {

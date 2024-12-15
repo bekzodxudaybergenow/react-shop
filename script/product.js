@@ -13,6 +13,9 @@ let headOpenBtnn = document.querySelector('.head-humburger--btn');
 let headSidebarr = document.querySelector('.head-sidebar');
 let headShadee = document.querySelector('.head-shade');
 let sidebarCloseBtnn = document.querySelector('.sidebar-closeBtn');
+let headSidebarShade = document.querySelector('.head-sidebar--shade');
+let headCategoryBtn = document.querySelector('.head-category--btn');
+let productsCategories = document.querySelector('.products-categories');
 
 let globalProducts;
 let myProducts = [];
@@ -22,11 +25,22 @@ let sidebarTotalSum = 0;
 
 /* Events */
 headCard.addEventListener('click', () => {
-    sidebar.classList.add('active')
+    sidebar.classList.add('active');
+    headSidebarShade.classList.add('active');
 })
 sidebarCloseBtn.addEventListener('click', () => {
     sidebar.classList.remove('active');
+    headSidebarShade.classList.remove('active');
 })
+headSidebarShade.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    headSidebarShade.classList.remove('active');
+})
+
+headCategoryBtn.addEventListener('click', () => {
+    productsCategories.classList.toggle('active');
+})
+
 headOpenBtnn.addEventListener('click', () => {
     headSidebarr.classList.add('active');
     headShadee.classList.add('active');

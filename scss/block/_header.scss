@@ -28,6 +28,9 @@
         opacity: 1;
     }
 }
+.humburger-btn {
+    margin-left: auto;
+}
 .head-nav {
     display: none;
     align-items: center;
@@ -124,7 +127,6 @@
     color: var(--main-color);
     background-color: var(--accent-color-one);
     transition: opacity .3s ease;
-    margin-left: auto;
 
     &:hover {
         opacity: .8;
@@ -132,6 +134,9 @@
     &:active {
         opacity: 1;
     }
+}
+.head-menu--btn {
+    margin-left: auto !important;
 }
 .head-action {
     display: none;
