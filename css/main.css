@@ -1349,6 +1349,7 @@ ul {
   display: flex;
   justify-content: center;
   column-gap: 25px;
+  flex-direction: column;
 }
 
 .loader {
@@ -1362,6 +1363,7 @@ ul {
 
 .products-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 25px;
   max-width: 1010px;
@@ -1427,10 +1429,9 @@ ul {
 }
 
 .products-categories {
-  display: flex;
+  display: none;
   flex-direction: column;
   row-gap: 10px;
-  max-width: 200px;
   width: 100%;
   height: 350px;
   border: 1px solid var(--accent-color-five);
@@ -1438,7 +1439,6 @@ ul {
 }
 
 .product-categories--btn {
-  max-width: 170px;
   height: 35px;
   border: none;
   border-radius: 4px;
@@ -1451,6 +1451,10 @@ ul {
 }
 .product-categories--btn:hover {
   background-color: var(--accent-color-three);
+}
+
+.head-action-card {
+  display: flex;
 }
 
 .head-card {
@@ -1469,20 +1473,28 @@ ul {
   background-color: var(--accent-color-one);
 }
 
+.head-sidebar.active {
+  transform: translateX(0);
+}
+
+.head-shade.active {
+  transform: translateX(0);
+}
+
 /* SIDEBAR */
 .sidebar {
   position: fixed;
-  width: 500px;
+  max-width: 80%;
+  width: 100%;
   height: 100vh;
   top: 0;
   right: 10px;
   padding: 10px 0;
   transform: translateX(500px);
-  transition: all 1s ease;
+  transition: all 1.3s ease-out;
 }
 
 .sidebar.active {
-  transition: all 1s ease;
   transform: translateX(0);
 }
 
@@ -1504,18 +1516,15 @@ ul {
 }
 
 .sidebar-item--sum {
-  padding: 10px 20px;
-  border-radius: 50px;
   background-color: transparent;
-  border: 2px solid var(--accent-color-seven);
   font-weight: 500;
 }
 
 .sidebar-list--item {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 8px;
+  padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
 }
@@ -1524,9 +1533,20 @@ ul {
   display: flex;
   align-items: center;
   column-gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sidebar-item--row {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.sidebar-item--row .sidebar-item--title {
+  font-size: 10px;
 }
 
 .sidebar-item--image {
+  flex-shrink: 0;
   width: 80px;
   height: 60px;
   object-fit: cover;
@@ -1538,6 +1558,12 @@ ul {
   display: flex;
   align-items: center;
   column-gap: 10px;
+}
+
+.sidebar-count--inner {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
 }
 
 .sidebar-count--decriment,
@@ -1561,11 +1587,12 @@ ul {
 
 .sidebar-close--btn {
   font-size: 18px;
-  padding: 10px 20px;
+  width: 30px;
+  height: 30px;
   color: var(--main-color);
-  background-color: transparent;
-  border-radius: 50px;
-  border: 2px solid var(--accent-color-seven);
+  background-color: var(--accent-color-one);
+  border-radius: 4px;
+  border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
