@@ -972,7 +972,7 @@ ul {
   }
 }
 .company {
-  padding: 80px 0;
+  padding: 100px 0 30px;
   position: relative;
 }
 .company::before {
@@ -992,21 +992,27 @@ ul {
 }
 
 .company-content {
-  max-width: 768px;
+  max-width: 540px;
   text-align: center;
-  padding-bottom: 64px;
+  padding-bottom: 24px;
 }
 
 .company-content--title {
   margin-bottom: 16px;
 }
 
+.company-content--desc {
+  font-size: 16px;
+  line-height: 24px;
+}
+
 .company-partner {
-  display: flex;
+  display: none;
   align-content: center;
   justify-content: space-around;
   max-width: 900px;
   width: 100%;
+  margin-bottom: 30px;
 }
 .company-partner img:last-child {
   margin-top: 15px;
@@ -1015,7 +1021,7 @@ ul {
 .company-ceo {
   max-width: 768px;
   margin-top: 80px;
-  padding: 80px 48px 32px;
+  padding: 60px 38px 22px;
   border-radius: 6px;
   position: relative;
   text-align: center;
@@ -1042,23 +1048,54 @@ ul {
 }
 
 .company-ceo--desc {
+  font-size: 16px;
+  line-height: 24px;
   margin-bottom: 16px;
 }
 
 .company-ceo--name {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 4px;
 }
 
 .company-ceo--position {
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .company-ceo--link {
   color: rgb(14, 165, 233);
 }
 
+@media screen and (min-width: 1024px) {
+  .company-partner {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .company-content {
+    max-width: 768px;
+    margin-bottom: 40px;
+  }
+  .company-content--desc {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .company-ceo {
+    padding: 80px 48px 32px;
+  }
+  .company-ceo--desc {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .company-ceo--name {
+    font-size: 18px;
+  }
+  .company-ceo--position {
+    font-size: 16px;
+  }
+}
 .form {
   margin-bottom: 80px;
 }
