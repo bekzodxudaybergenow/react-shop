@@ -1490,7 +1490,7 @@ ul {
   top: 0;
   right: 10px;
   padding: 10px 0;
-  transform: translateX(500px);
+  transform: translateX(100%);
   transition: all 1.3s ease-out;
 }
 
