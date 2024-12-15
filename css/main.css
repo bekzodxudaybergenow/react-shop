@@ -1717,8 +1717,8 @@ ul {
     max-width: 290px;
   }
   .loader {
-    top: 35%;
-    left: 50%;
+    top: 55%;
+    left: 54%;
   }
   .sidebar {
     max-width: 500px;
@@ -1727,5 +1727,23 @@ ul {
   .github-product {
     display: flex;
     width: 31px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .loader {
+    top: 45%;
+    left: 52%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .loader {
+    top: 50%;
+    left: 52%;
+  }
+}
+@media screen and (min-width: 1540px) {
+  .loader {
+    top: 35%;
+    left: 52%;
   }
 }
