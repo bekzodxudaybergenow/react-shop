@@ -753,7 +753,6 @@ ul {
 }
 .solution {
   position: relative;
-  height: 760px;
   padding: 80px 0 0;
   background-color: var(--accent-color-four);
 }
@@ -768,7 +767,7 @@ ul {
 }
 
 .solution-content {
-  max-width: 730px;
+  max-width: 540px;
   margin: 0 auto;
   padding-bottom: 64px;
   text-align: center;
@@ -780,8 +779,8 @@ ul {
 
 .solution-slide {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  row-gap: 12px;
 }
 
 .solution-slide--list li {
@@ -790,8 +789,13 @@ ul {
 }
 
 .solution-list--content {
-  padding-right: 64px;
   margin-bottom: 32px;
+}
+
+.solution-content--desc,
+.solution-content--descs {
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .solution-list--item {
@@ -806,15 +810,78 @@ ul {
 }
 
 .solution-content--desc {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 24px;
 }
 
+.solution-slide--image {
+  transform: translateY(20%);
+}
 .solution-slide--image img {
   max-width: 500px;
   width: 100%;
   height: auto;
 }
 
+@media screen and (min-width: 768px) {
+  .solution-slide {
+    align-items: center;
+  }
+  .solution-slide--list li {
+    max-width: 640px;
+    width: 100%;
+  }
+  .solution-list--item {
+    justify-content: space-between;
+  }
+  .solition-item--inner {
+    justify-content: space-between;
+    max-width: 400px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .solution-slide {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    transform: translateY(60px);
+  }
+  .solution-content {
+    padding-bottom: 44px;
+  }
+  .solution-slide--list li {
+    max-width: 540px;
+  }
+  .solution-slide--image img {
+    display: block;
+    width: 360px;
+    transform: translateY(-20%);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .solution-slide {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .solution-content {
+    max-width: 730px;
+  }
+  .solition-item--inner {
+    max-width: 460px;
+  }
+  .solution-content--desc,
+  .solution-content--descs {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .solution-slide--image img {
+    display: block;
+    max-width: 500px;
+    width: 100%;
+    transform: translateY(10%);
+  }
+}
 .work {
   padding: 140px 0 80px;
   background: linear-gradient(var(--bg-color) 50%, var(--accent-color-four) 50%);
