@@ -1368,7 +1368,7 @@ ul {
 .loader {
   display: inline-block;
   position: absolute;
-  top: 30%;
+  top: 23%;
   left: 45%;
   font-size: 36px;
   color: var(--accent-color-one);
