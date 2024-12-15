@@ -9,6 +9,11 @@ let sidebarCountCoun = document.querySelector('.sidebar-count--coun');
 let sidebarSum = document.querySelector('.sidebar-sum');
 let loader = document.querySelector('.loader');
 
+let headOpenBtnn = document.querySelector('.head-humburger--btn');
+let headSidebarr = document.querySelector('.head-sidebar');
+let headShadee = document.querySelector('.head-shade');
+let sidebarCloseBtnn = document.querySelector('.sidebar-closeBtn');
+
 let globalProducts;
 let myProducts = [];
 let sidebarTotalSum = 0;
@@ -22,7 +27,18 @@ headCard.addEventListener('click', () => {
 sidebarCloseBtn.addEventListener('click', () => {
     sidebar.classList.remove('active');
 })
-
+headOpenBtnn.addEventListener('click', () => {
+    headSidebarr.classList.add('active');
+    headShadee.classList.add('active');
+})
+sidebarCloseBtnn.addEventListener('click', () => {
+    headSidebarr.classList.remove('active');
+    headShadee.classList.remove('active');
+})
+headShadee.addEventListener('click', () => {
+    headSidebarr.classList.remove('active');
+    headShadee.classList.remove('active');
+})
 
 /* Api orqali mahsulotlarni olish */
 let initApp = () => {
@@ -93,13 +109,18 @@ let buildSidebarHTML = (myProducts) => {
          <li class="sidebar-list--item">
             <div class="sidebar-item--inner">
                 <img class="sidebar-item--image" src="${myProduct.image}" alt="">
+                <div class="sidebar-item--row">
+                <h4 class="sidebar-item--title">${myProduct.title}</h4>
                 <span class="sidebar-item--price">$${myProduct.price}</span>
+                </div>
             </div>
             <div class="sidebar-count">
-                <button class="sidebar-count--remove" onclick="removetBtn(${myProduct.id})">Remove</button>
-                <button class="sidebar-count--decriment" onclick="decrimentBtn(${myProduct.id})">-</button>
-                <span class="sidebar-count--count">${myProduct.count}</span>
-                <button class="sidebar-count--increment" onclick="incrementBtn(${myProduct.id})">+</button>
+                <div class="sidebar-count--inner">
+                    <button class="sidebar-count--decriment" onclick="decrimentBtn(${myProduct.id})">-</button>
+                    <span class="sidebar-count--count">${myProduct.count}</span>
+                    <button class="sidebar-count--increment" onclick="incrementBtn(${myProduct.id})">+</button>
+                </div>
+                <button class="sidebar-count--remove" onclick="removetBtn(${myProduct.id})"><i class="fa-solid fa-trash"></i></button>
             </div>
             </li>
         `
