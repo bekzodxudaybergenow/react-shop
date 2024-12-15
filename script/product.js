@@ -168,13 +168,26 @@ let decrimentBtn = (myProductId) => {
 let removetBtn = (myProductId) => {
     let sidebarProductObj = myProducts.find((el) => el.id === myProductId);
     let sidebarProductIdx = myProducts.findIndex((el) => el.id === myProductId);
-    
-    myProducts.splice(sidebarProductIdx, 1);
-    headCardCount.textContent--;
-    
-    sidebarTotalSum -= sidebarProductObj.price
-    sidebarSum.textContent = sidebarTotalSum.toFixed(2);
 
-    buildSidebarHTML(myProducts);
+    
+    if(sidebarProductObj.count == 1) {
+        myProducts.splice(sidebarProductIdx, 1);
+        headCardCount.textContent--;
+        
+        sidebarTotalSum -= sidebarProductObj.price
+        sidebarSum.textContent = sidebarTotalSum.toFixed(2);
+    
+        buildSidebarHTML(myProducts);
+    }
+    else if(sidebarProductObj.count > 1) {
+        myProducts.splice(sidebarProductIdx, 1);
+        headCardCount.textContent--;
+        
+        sidebarTotalSum -= (sidebarProductObj.price * sidebarProductObj.count) 
+        sidebarSum.textContent = sidebarTotalSum.toFixed(2);
+    
+        buildSidebarHTML(myProducts);
+    }
+    console.log(sidebarProductObj.count);
 }
 
